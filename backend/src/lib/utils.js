@@ -11,7 +11,7 @@ export const generateToken = (userId, res) => {
         sameSite: "Lax",
         maxAge: 7 * 24 * 60 * 60 * 1000,
     });
-    console.log("JWT Token:", token); // ✅ Log the token
+    console.log("JWT Token:", token);
 
 
 
