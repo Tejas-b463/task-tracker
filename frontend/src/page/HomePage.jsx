@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import { BadgePlus } from 'lucide-react';
 import { useAuthStore } from '../store/useAuthStore';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
   const [isHovered, setIsHovered] = useState(false);
   const { authUser } = useAuthStore();
+
+  const navigate = useNavigate();
   
-  // Get name from authUser object
+  // Get name from authUser 
   const username = authUser?.name || 'Guest';
 
   return (
@@ -28,6 +31,7 @@ const HomePage = () => {
           }`}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
+          onClick={()=> navigate('/project')}
         >
           <BadgePlus size={20} />
           <span>Create Project</span>
